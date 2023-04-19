@@ -1,143 +1,97 @@
-import getConfig from 'next/config';
+import Head from 'next/head';
 
-import Layout from '@/components/Layout';
-
-const { publicRuntimeConfig } = getConfig();
-const { name } = publicRuntimeConfig.site;
-
-const Home = () => {
+export default function Home() {
   return (
-    <Layout>
-      <section className="py-12">
-        <div className="container mx-auto px-4">
-          <div className="prose prose-blue mx-auto">
-            <h1>{name}</h1>
-            <p>Welcome to my Next.js + Tailwind CSS starter template.</p>
+    <div className="min-h-screen bg-gray-100">
+      <Head>
+        <title>EZKL - Verifiable Private Inference</title>
+        <meta
+          name="description"
+          content="EZKL is a project that helps developers perform verifiable private inference on deep learning models and other computational graphs using zk-SNARKs."
+        />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
 
-            <h2>Features:</h2>
-            <ul>
-              <li>
-                Pre-configured <code>postcss.config.js</code> and{' '}
-                <code>tailwind.config.js</code>.
-              </li>
-              <li>
-                Markdown and CMS Content friendly with{' '}
-                <code>@tailwindcss/typography</code>.
-              </li>
-              <li>
-                Form styles with <code>@tailwindcss/forms</code>.
-              </li>
-              <li>
-                <code>global.css</code> that contains Tailwind CSS directives.
-              </li>
-              <li>
-                <code>{'<Layout />'}</code> component.
-              </li>
-            </ul>
+      <header className="bg-blue-600">
+        <nav className="container mx-auto px-6 py-4">
+          <div className="flex items-center justify-between">
+            <div className="text-white text-2xl font-bold">
+              <span className="bg-blue-500 px-2 py-1 rounded-md">EZKL</span>
+            </div>
+          </div>
+        </nav>
+      </header>
 
-            <h2>Guides</h2>
-            <ul>
-              <li>
-                <a
-                  href="https://nextjs.org/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Next.js
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://tailwindcss.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Tailwind CSS
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://github.com/tailwindlabs/tailwindcss-typography"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  @tailwindcss/typography
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://github.com/tailwindlabs/tailwindcss-forms"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  @tailwindcss/forms
-                </a>
-              </li>
-            </ul>
+      <main className="container mx-auto px-6 py-8">
+        <section className="text-center mb-16">
+          <h1 className="text-4xl font-bold mb-4">Welcome to EZKL</h1>
+          <p className="text-xl text-gray-600">
+            Perform verifiable private inference on deep learning models and other
+            computational graphs using zk-SNARKs
+          </p>
+        </section>
 
-            <h2>Form control examples</h2>
-            <form action="" className="mb-0 space-y-6">
-              <div>
-                <label
-                  htmlFor="sample-email"
-                  className="block text-sm font-medium text-gray-700 mb-1"
-                >
-                  Sample email input
-                </label>
-                <input
-                  type="email"
-                  name="sample-email"
-                  id="sample-email"
-                  placeholder="Enter your email address"
-                />
-              </div>
-              <div className="flex items-center">
-                <label htmlFor="sample-checkbox">
-                  <input
-                    type="checkbox"
-                    name="sample-checkbox"
-                    id="sample-checkbox"
-                  />
-                  <span className="ml-2">A sample checkbox</span>
-                </label>
-              </div>
-              <div className="flex items-center space-x-4">
-                <label htmlFor="sample-radio-1">
-                  <input type="radio" name="sample-radio" id="sample-radio-1" />
-                  <span className="ml-2">A sample radio number one</span>
-                </label>
-                <label htmlFor="sample-radio-2">
-                  <input type="radio" name="sample-radio" id="sample-radio-2" />
-                  <span className="ml-2">A sample radio number two</span>
-                </label>
-              </div>
-            </form>
-
-            <h2>Maintainer</h2>
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+          <div className="prose lg:prose-xl">
+            <h2>Mission</h2>
             <p>
-              This project template is maintained by{' '}
-              <a
-                href="https://earvinpiamonte.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                @earvinpiamonte
-              </a>{' '}
-              and publicly available on{' '}
-              <a
-                href="https://github.com/earvinpiamonte/nextjs-tailwindcss-template"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                GitHub
-              </a>
-              .
+              Our mission is to empower developers with the tools they need to
+              easily and efficiently prove and verify the execution of AI models
+              using zero-knowledge proofs. Our aim is not to build any
+              applications ourselves, but stimulate the creation of applications
+              in the community.
             </p>
           </div>
-        </div>
-      </section>
-    </Layout>
-  );
-};
 
-export default Home;
+          <div className="prose lg:prose-xl">
+            <h2>Solution</h2>
+            <p>
+              EZKL addresses the need for easy-to-use tools for performing
+              inference on deep learning models and other computational graphs
+              using zk-SNARKs. With EZKL, developers can define a computational
+              graph, export the graph of operations, and generate a ZK-SNARK
+              circuit for secure and private computation of various ML and
+              related tasks.
+            </p>
+          </div>
+        </section>
+
+        <section className="bg-white p-6 rounded-lg shadow-md">
+          <h2 className="text-2xl font-bold mb-4">Why EZKL?</h2>
+          <ul className="list-disc list-inside text-gray-700">
+            <li>Advance zero-knowledge tools and libraries</li>
+            <li>Improve user experience and developer experience</li>
+            <li>Enable technical implementations of zero-knowledge proofs and circuits</li>
+            <li>Contribute to the growth of the ZK ecosystem</li>
+          </ul>
+        </section>
+      </main>
+
+      <footer className="bg-gray-200 mt-16">
+        <div className="container mx-auto px-6 py-4">
+          <div className="flex items-center justify-between">
+            <div className="text-gray-700 text-sm">
+              {/* Supported by{' '}
+              <a
+                href="https://gitcoin.co/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text
+                -blue-600 hover:text-blue-800"
+                >
+                Gitcoin
+                </a> */}
+                </div>
+                <div>
+                {/* <img
+                             src="/gitcoin.svg"
+                             alt="Gitcoin Logo"
+                             className="h-8 w-auto"
+                           /> */}
+                </div>
+                </div>
+                </div>
+                </footer>
+                </div>
+                );
+                }
